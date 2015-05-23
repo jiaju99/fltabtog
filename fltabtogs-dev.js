@@ -2,7 +2,7 @@
 fltabtogs.js
 version-20150413-cs
 simply app for tabs or vils
-/*fltabvils.js-github.com/ftlabs/fastclick-20150415-cs
+/*https://github.com/jiaju99/tabtogs
 */
 
 
