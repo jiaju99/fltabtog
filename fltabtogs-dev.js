@@ -1,8 +1,8 @@
 /*
-fltabtogs.js
-version-20150413-cs
-simply app for tabs or vils
-/*https://github.com/jiaju99/tabtogs
+fltabtogs.js 
+version-20150413-cs.
+simply app for tabs or togs.
+https://github.com/jiaju99/tabtogs 
 */
 
 
@@ -28,9 +28,8 @@ if(evt=='hover'){as.hover(chg1);}else{as.click(chg1);}
 
 });
 
-
 }/*0.5*/
 
 
 
-/*edit-20150520-cs*/
+/*edit-20150524-cs*/
