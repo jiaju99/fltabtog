@@ -21,10 +21,6 @@ h1,h2,h3,h4,h5,h6{padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0;fo
 
 
 
-
-
-
-
 /** .moda 豆荚式外观 **/
 
 .mh{height:26px;margin-bottom:1px; }
@@ -35,7 +31,7 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 .cot{min-height:50px;background:#D9EBF9;}
 
 
-
+/*巧妙的给父元素添加动态背景的方法*/
 .mh[rel="0"],[rel="0"] .mh{ background-color:yellow;}
 .mh[rel="1"],[rel="1"] .mh{ background-color:green;}
 .mh[rel="2"],[rel="2"] .mh{ background-color:red;}
@@ -50,7 +46,7 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 
 
 
-<h1>点击tabs 0个cot 适用于 按钮组.或 ajax取数据 的头部 </h1>
+<h1>点击tabs 0个cot 适用于 按钮组.或 ajax取数据 的头部.带sid，使用 jstorage本地存储</h1>
 
 <h3 class="mh cf tabs" rel="1" sid="tabsa">
 <span class="tit">告警</span>
@@ -69,7 +65,7 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 
 
 
-<h1>点击tabs 对应1个cot 适用于ajax取数据</h1>
+<h1>点击tabs 对应1个cot 适用于ajax取数据.带sid，使用 jstorage本地存储</h1>
 
 <div class="tabs" rel="1" sid="tabsb">
 <h3 class="mh cf">
@@ -86,7 +82,7 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 <br>
 
 
-<h1>点击tabs 对应n个cots 适用于 普通tab点击选项卡/或 可修改小提示/弹层</h1>
+<h1>点击tabs 对应n个cots 适用于 普通tab点击选项卡/或 可修改小提示/弹层.带sid，使用 jstorage本地存储</h1>
 
 <div class="tabs" rel="2" sid="tabsc">
 <h3 class="mh cf">
