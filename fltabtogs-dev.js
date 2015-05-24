@@ -20,10 +20,10 @@ if(tg=='tab'){a.addClass('now');b.removeClass('hide');/*console.log('tab');*/
 }
 }
 
-if(sid){sidx=$.jStorage.get(sid);idx=sidx!=null?sidx:idx;bx.attr('rel',idx);}
+if(sid!=null){sidx=$.jStorage.get(sid);idx=(sidx!=null)?sidx:idx;bx.attr('rel',idx);}
 
 chg(idx);
-var chg1=function(){var i=as.index(this);bx.attr('rel',i);$.jStorage.set(sid,i);chg(i);};
+var chg1=function(){var i=as.index(this);bx.attr('rel',i);if(sid!=null){$.jStorage.set(sid,i);}chg(i);};
 if(evt=='hover'){as.hover(chg1);}else{as.click(chg1);}
 
 });
