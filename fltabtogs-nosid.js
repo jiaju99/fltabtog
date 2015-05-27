@@ -1,0 +1,2 @@
+/*fltabtogs-nosid.js version-20150413-cs. simply app for tabs or togs. but, no sid or jstorage.https://github.com/jiaju99/tabtogs */
+function fltabtogs(a,b,c,d){$(a).each(function(a,e){function k(a){var b=g.eq(a),c=h.eq(a),e=g.not(g[a]),f=h.not(h[a]);e.removeClass("now"),f.addClass("hide"),"tab"==d?(b.addClass("now"),c.removeClass("hide")):(b.toggleClass("now"),c.toggleClass("hide"))}var l,f=$(e),g=f.find(b),h=f.find(c),i=f.attr("rel"),j=f.attr("evt");k(i),l=function(){var a=g.index(this);f.attr("rel",a),k(a)},"hover"==j?g.hover(l):g.click(l)})}/*edit-20150527-cs*/
