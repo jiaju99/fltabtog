@@ -6,36 +6,56 @@
 <title>tab选项卡 toggle交替器</title>
 <style>
 html,body{height:100%}html{overflow-y:auto;zoom:1}body{border:0;margin:0}
-h1,h2,h3,h4,h5,h6{padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0;font-weight:400}
+h1,h2,h3,h4,h5,h6{padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0;font-weight:400}dl{margin-top:0;margin-bottom:0}dd{margin-left:0}
+ul,ol{padding:0;margin:0;list-style:none}
 
 /*Firefox、ie9 ie8 下 避免父盒子的顶级子盒子 发生 margin-top 溢出*/
 *:before{display:table;line-height:0;content:' ';}
 
-
-.hide{ display:none;}
-
-/** 6浮动修补 **/
 .fl{float:left;}.fr{float:right;}.cl{clear:both;}/*人工修补*/
 .cf:before,.cf:after{display:table;line-height:0;content:' ';}.cf:after{clear:both;}.cf{*zoom:1;} /*此为清浮最佳方案*/
 
+.rel{ position:relative;}
+.hide{ display:none;}
+
+#fltabtogs{ padding:60px 10px; margin:20px;}
+#fltabtogs h1{ font-size:14px;}
 
 
 
-/** .moda 豆荚式外观 **/
 
-.mh{height:26px;margin-bottom:1px; }
-.tit{float:left;line-height:26px; padding:0 6px;
+
+
+
+
+
+
+
+
+
+/* 豆荚式外观: 荚、豆、盆 */
+.jia{margin-bottom:1px; position:relative;}
+.dou {float:left;line-height:26px; padding:0 6px;
 color:#000;font-size:14px; cursor:pointer;background:#4ee;}
-.now{background:#FCF;}
+.jia .now{background:#FCF;}
+.pen{min-height:50px;background:#D9EBF9;}
 
-.cot{min-height:50px;background:#D9EBF9;}
+/* 竹节式外观：竹、节、干 */
+.jie {line-height:26px; padding:0 6px;margin-bottom:1px;
+color:#000;font-size:14px; cursor:pointer;background:#4ee; position:relative;}
+.jie.now{background:#FCF;}
+.gan{min-height:50px;background:#D9EBF9;}
+
+/*弹层*/
+.pop{min-width:100px;min-height:50px;background:#D9EBF9;
+position:absolute; left:0; top:100%;}
 
 
 /*巧妙的给父元素添加动态背景的方法*/
-.mh[rel="0"],[rel="0"] .mh{ background-color:yellow;}
-.mh[rel="1"],[rel="1"] .mh{ background-color:green;}
-.mh[rel="2"],[rel="2"] .mh{ background-color:red;}
-.mh[rel="3"],[rel="3"] .mh{ background-color:blue;}
+.jia[rel="0"],[rel="0"] .jia{ background-color:yellow;}
+.jia[rel="1"],[rel="1"] .jia{ background-color:green;}
+.jia[rel="2"],[rel="2"] .jia{ background-color:red;}
+.jia[rel="3"],[rel="3"] .jia{ background-color:blue;}
 
 
 
@@ -46,156 +66,125 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 
 
 
-<h1>点击tabs 0个cot 适用于 按钮组.或 ajax取数据 的头部.带sid，使用 jstorage本地存储</h1>
+<h1>默认点击tabs。有豆荚，无盆，适用于 按钮组。也可用于ajax取数据。rel=1,默认索引值显示第2个。带sid，使用jstorage存储状态</h1>
 
-<h3 class="mh cf tabs" rel="1" sid="tabsa">
-<span class="tit">告警</span>
-<span class="tit">分析</span>
-<span class="tit">解决</span>
+<h3 class="jia cf tabs" rel="1" sid="tabsa">
+<span class="dou tit">告警</span>
+<span class="dou tit">分析</span>
+<span class="dou tit">解决</span>
 </h3>
 
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 
-<h1>点击tabs 对应1个cot 适用于ajax取数据.带sid，使用 jstorage本地存储</h1>
+
+<h1>点击tabs 对应1个ajaxcot 可用于ajax取数据。需额外js处理ajax.</h1>
 
 <div class="tabs" rel="1" sid="tabsb">
-<h3 class="mh cf">
-<span class="tit">告警</span>
-<span class="tit">分析</span>
-<span class="tit">解决</span>
+<h3 class="jia cf">
+<span class="dou tit">告警</span>
+<span class="dou tit">分析</span>
+<span class="dou tit">解决</span>
 </h3>
 <div class="ajaxcot">ajaxcot here <!--ajaxcot --></div>
 <!--tabs --></div>
 
 
-<br>
-<br>
-<br>
 
 
-<h1>点击tabs 对应n个cots 适用于 普通tab点击选项卡/或 可修改小提示/弹层.带sid，使用 jstorage本地存储</h1>
+<h1>普通tab点击选项卡,或可修改的小提示/弹层.带sid。</h1>
 
 <div class="tabs" rel="2" sid="tabsc">
-<h3 class="mh cf">
-<span class="tit">告警</span>
-<span class="tit">分析</span>
-<span class="tit">解决</span>
+<h3 class="jia cf">
+<span class="dou tit">告警</span>
+<span class="dou tit">分析</span>
+<span class="dou tit">解决</span>
 </h3>
-<div class="cot">1<!--cot --></div>
-<div class="cot">2<!--cot --></div>
-<div class="cot">3<!--cot --></div>
+<div class="pen cot">1<!--cot --></div>
+<div class="pen cot">2<!--cot --></div>
+<div class="pen cot">3<!--cot --></div>
 <!--tabs--></div>
 
 
-<br>
-<br>
-<br>
 
+<h1>普通tab悬停选项卡,或可修改的小提示/弹层.带sid。</h1>
 
-
-
-<h1>悬停tabs 对应n个cots 适用于 普通tab悬停选项卡 /或 可修改小提示</h1>
-
-<div class="tabs" rel="2" evt="hover">
-<h3 class="mh cf">
-<span class="tit">告警</span>
-<span class="tit">分析</span>
-<span class="tit">解决</span>
+<div class="tabs" rel="2" evt="hover" sid="tabsd">
+<h3 class="jia cf">
+<span class="dou tit">告警</span>
+<span class="dou tit">分析</span>
+<span class="dou tit">解决</span>
 </h3>
-<div class="cot">1<!--cot --></div>
-<div class="cot">2<!--cot --></div>
-<div class="cot">3<!--cot --></div>
+<div class="pen cot">1<!--cot --></div>
+<div class="pen cot">2<!--cot --></div>
+<div class="pen cot">3<!--cot --></div>
 <!--tabs --></div>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 
-<h1>点击togs n=>n 适应于 可折叠手风琴菜单  /或 可修改小提示/弹层</h1>
 
-<div class="togs" rel="1">
-<h3 class="mh cf">
-<span class="tit">告警</span>
-<span class="tit">分析</span>
-<span class="tit">解决</span>
-</h3>
-<div class="cot">1<!--cot --></div>
-<div class="cot">2<!--cot --></div>
-<div class="cot">3<!--cot --></div>
+
+<h1>点击togs，适应于 可折叠手风琴菜单，或 可修改小提示/弹层。无sid。</h1>
+
+<div class="togs" rel="1" title="可折叠手风琴菜单.竹节干外观">
+
+<h3 class="jie tit">告警</h3>
+<div class="gan cot">1<!--cot --></div>
+<h3 class="jie tit">分析</h3>
+<div class="gan cot">2<!--cot --></div>
+<h3 class="jie tit">解决</h3>
+<div class="gan cot">3<!--cot --></div>
+
 <!--togs --></div>
 
-<br>
-<br>
-<br>
 
-<h1>悬停togs n=>n 适用于 不可修改小提示 </h1>
+<div class="togs rel" rel="1" title="弹层">
+<h3 class="jia cf">
+<span class="dou tit">告警</span>
+<span class="dou tit">分析</span>
+<span class="dou tit">解决</span>
+</h3>
+<div class="pop cot">1<!--cot --></div>
+<div class="pop cot">2<!--cot --></div>
+<div class="pop cot">3<!--cot --></div>
+<!--togs --></div>
+
+
+
+
+<h1>悬停togs，适用于 不可修改小提示。 </h1>
 <div class="togs" rel="1" evt="hover">
-<h3 class="mh cf">
-<span class="tit">告警</span>
-<span class="tit">分析</span>
-<span class="tit">解决</span>
+<h3 class="jia cf">
+<span class="dou tit">告警</span>
+<span class="dou tit">分析</span>
+<span class="dou tit">解决</span>
 </h3>
-<div class="cot">1<!--cot --></div>
-<div class="cot">2<!--cot --></div>
-<div class="cot">3<!--cot --></div>
+<div class="pen cot">1<!--cot --></div>
+<div class="pen cot">2<!--cot --></div>
+<div class="pen cot">3<!--cot --></div>
 <!--togs --></div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
-<h1>悬停togs n=>n 包含关系。 适用于 导航菜单 以模拟 hover  </h1>
 
-<ul class="togs mh cf" rel="1" evt="hover">
-<li class="tit">告警
-<div class="cot">1<!--cot --></div>
+
+<h1>悬停togs，注意html结构，tit和cot是 包含关系。 适用于 导航菜单， 以模拟 hover效果.或 可修改小提示</h1>
+
+<ul class="togs jia cf" rel="1" evt="hover">
+<li class="dou tit">告警
+<div class="pen cot">1<!--cot --></div>
 </li>
-<li class="tit">分析
-<div class="cot">2<!--cot --></div>
+<li class="dou tit">分析
+<div class="pen cot">2<!--cot --></div>
 </li>
-<li class="tit">解决
-<div class="cot">2<!--cot --></div>
+<li class="dou tit">解决
+<div class="pen cot">2<!--cot --></div>
 </li>
 </ul>
-
-
-
-
-<br>
-<br>
-<br>
-
-
-
-
-<br>
-<br>
-<br>
 
 
 
