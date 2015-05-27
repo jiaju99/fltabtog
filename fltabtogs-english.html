@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +6,8 @@
 <title>tabs or togs demos</title>
 <style>
 html,body{height:100%}html{overflow-y:auto;zoom:1}body{border:0;margin:0}
-h1,h2,h3,h4,h5,h6{padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0;font-weight:400}
+h1,h2,h3,h4,h5,h6{padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0;font-weight:400}dl{margin-top:0;margin-bottom:0}dd{margin-left:0}
+ul,ol{padding:0;margin:0;list-style:none}
 
 /*Firefox、ie9 ie8 .void overflow of margin-top of child node */
 *:before{display:table;line-height:0;content:' ';}
@@ -16,10 +16,11 @@ h1,h2,h3,h4,h5,h6{padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0;fo
 .hide{ display:none;}
 
 /** 6 fix of float **/
-.fl{float:left;}.fr{float:right;}.cl{clear:both;}/*men fix*/
+.cl{clear:both;}/*men fix*/
 .cf:before,.cf:after{display:table;line-height:0;content:' ';}.cf:after{clear:both;}.cf{*zoom:1;} /*auto fix when appy .cf on parent node.best solution. */
 
-
+#fltabtogs{ padding:60px 10px; margin:20px;}
+#fltabtogs h1{ font-size:14px;}
 
 
 /** .moda title who are like beanpods **/
@@ -49,6 +50,10 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 
 <h1>click a set of titles.or a set of buttons. be going to use ajax to get content .use sid for jstorage to store data.</h1>
 
+<p>Tiny tabs or toggles function while click or hover a set of html tags.Used as switch,group buttons,tabs,popouts,menus,navs,or accordion~</p>
+
+<p>If you want not use jstorage.js,that is, no sid . You can use fltabtogs-nosid.js.but to use url args to remember the rel attr, instead.</p>
+
 <h3 class="mh cf tabs" rel="1" sid="tabsa">
 <span class="tit">html</span>
 <span class="tit">css</span>
@@ -57,12 +62,6 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 <h1>click a set of titles.or a set of buttons. be going to use ajax to get content in .ajax cot .use sid for jstorage to store data.</h1>
@@ -77,9 +76,6 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 <!--tabs --></div>
 
 
-<br>
-<br>
-<br>
 
 
 <h1>click a set of titles.or a set of buttons. be going to use as tabs.use sid for jstorage to store data.</h1>
@@ -96,9 +92,9 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 <!--tabs--></div>
 
 
-<br>
-<br>
-<br>
+
+
+
 
 
 
@@ -116,18 +112,18 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 <!--tabs --></div>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <h1>click a set of titles to use as togs. use as menus navs or accordions or editable pop divs</h1>
@@ -143,9 +139,9 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 <div class="cot">3<!--cot --></div>
 <!--togs --></div>
 
-<br>
-<br>
-<br>
+
+
+
 
 
 <h1>hover a set of titles to use as togs. use as menus navs or accordions or uneditable pop divs</h1>
@@ -160,12 +156,12 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 <div class="cot">3<!--cot --></div>
 <!--togs --></div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
+
+
+
+
 
 <h1>hover a set of titles to use as togs. use as menus navs.to imitate the hover affects.notice the  structure of thd html </h1>
 
@@ -185,24 +181,15 @@ color:#000;font-size:14px; cursor:pointer;background:#4ee;}
 
 
 
-<br>
-<br>
-<br>
-
-
-
-
-<br>
-<br>
-<br>
 
 
 
 
 
-<script src="js/jq.js"></script>
-<script src="js/jstorage.js"></script>
-<script src="js/fltabtogs.js"></script>
+
+<script src="jq.js"></script>
+<script src="jstorage.js"></script>
+<script src="fltabtogs.js"></script>
 <script>
 $(function(){/*<0*/
 
